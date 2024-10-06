@@ -58,6 +58,8 @@
     .grant-location {
       @include flexalign(column);
 
+      display: none;
+
       img {
         margin-bottom: 2rem;
       }
@@ -92,7 +94,15 @@
     }
 
     .loading-container {
-      display: none;
+      @include flexalign(column);
+
+      // display: none;
+
+      p {
+        text-transform: uppercase;
+        padding-left: 1rem;
+        font-size: 1.5rem;
+      }
     }
 
     .info-container {

@@ -51,6 +51,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
 }
 .wrapper .weather-container .grant-location img {
   margin-bottom: 2rem;
@@ -80,7 +81,14 @@
   display: none;
 }
 .wrapper .weather-container .loading-container {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper .weather-container .loading-container p {
+  text-transform: uppercase;
+  padding-left: 1rem;
+  font-size: 1.5rem;
 }
 .wrapper .weather-container .info-container {
   display: none;
