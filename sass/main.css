@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
-h1 {
-  color: red;
-}
+.wrapper img {
+  position: relative;
+  z-index: -1;
+}/*# sourceMappingURL=main.css.map */

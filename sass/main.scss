@@ -1,9 +1,15 @@
+@import "mixin";
+@import "variables";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-h1 {
-  color: red;
+.wrapper {
+  img {
+    position: relative;
+    z-index: -1;
+  }
 }
