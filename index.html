@@ -8,17 +8,19 @@
   </head>
   <body>
     <div class="wrapper">
+      <img class="bgImg" src="/img/bgImg.jpg" />
+
       <h1>Weather App</h1>
 
       <div class="tab-container">
-        <p class="tab" data-userWeather>Your Weather</p>
+        <p class="tab current-tab" data-userWeather>Your Weather</p>
         <p class="tab" data-searchWeather>Search Weather</p>
       </div>
 
       <div class="weather-container">
         <!-- Grant Location UI -->
         <div class="grant-location">
-          <img src="img/locat.jpg" width="80" height="80" loading="lazy" />
+          <img src="img/location.png" width="80" height="80" loading="lazy" />
           <p>Grant Location Access</p>
           <p>Allow Access to get Weather Information</p>
           <button class="btn" data-grantAccess>Grant Access</button>

@@ -4,7 +4,84 @@
   box-sizing: border-box;
 }
 
-.wrapper img {
-  position: relative;
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  color: #f9f7f7;
+}
+.wrapper .bgImg {
+  width: 100vw;
+  height: 100vh;
+  filter: brightness(30%);
+  position: absolute;
   z-index: -1;
+}
+.wrapper h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 1rem;
+}
+.wrapper .tab-container {
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .tab-container .current-tab {
+  background-color: rgba(219, 226, 239, 0.5);
+  border-radius: 4px;
+}
+.wrapper .tab-container .tab {
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 1.75px;
+  padding: 5px 8px;
+  font-weight: 600;
+}
+.wrapper .weather-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-block: 4rem;
+}
+.wrapper .weather-container .grant-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper .weather-container .grant-location img {
+  margin-bottom: 2rem;
+}
+.wrapper .weather-container .grant-location p:first-of-type {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.wrapper .weather-container .grant-location p:last-of-type {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.75px;
+}
+.wrapper .weather-container .grant-location .btn {
+  all: unset;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: #112d4e;
+  cursor: pointer;
+  padding: 10px 30px;
+  margin-bottom: 10px;
+}
+.wrapper .weather-container .form-container {
+  display: none;
+}
+.wrapper .weather-container .loading-container {
+  display: none;
+}
+.wrapper .weather-container .info-container {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
