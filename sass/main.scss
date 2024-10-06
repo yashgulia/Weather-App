@@ -49,10 +49,8 @@
   }
 
   .weather-container {
-    display: flex;
+    @include flexalign(column);
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
     margin-block: 4rem;
 
     .grant-location {
@@ -90,7 +88,42 @@
     }
 
     .form-container {
-      display: none;
+      @include flexalign(row);
+      justify-content: center;
+      // display: none;
+      width: 90%;
+      max-width: 550px;
+      margin: 0 auto;
+      gap: 0 10px;
+      margin-bottom: 3rem;
+
+      input {
+        all: unset;
+        width: calc(100% - 80px);
+        height: 40px;
+        padding: 0 20px;
+        background-color: transparent;
+        border-radius: 10px;
+        font-size: 1.5rem;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        &:focus {
+          outline: 3px solid rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      .btn {
+        padding: unset;
+        width: 40px;
+        height: 40px;
+        @include flexalign(row);
+        justify-content: center;
+        border-radius: 30%;
+        margin-bottom: 1px;
+      }
     }
 
     .loading-container {
@@ -108,7 +141,7 @@
     .info-container {
       @include flexalign(column);
       width: 100%;
-      // display: none;
+      display: none;
 
       .name {
         @include flexalign(row);

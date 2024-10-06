@@ -42,9 +42,9 @@
 }
 .wrapper .weather-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-block: 4rem;
 }
 .wrapper .weather-container .grant-location {
@@ -78,7 +78,44 @@
   margin-bottom: 10px;
 }
 .wrapper .weather-container .form-container {
-  display: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+  gap: 0 10px;
+  margin-bottom: 3rem;
+}
+.wrapper .weather-container .form-container input {
+  all: unset;
+  width: calc(100% - 80px);
+  height: 40px;
+  padding: 0 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+.wrapper .weather-container .form-container input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.wrapper .weather-container .form-container input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.wrapper .weather-container .form-container input:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+.wrapper .weather-container .form-container .btn {
+  padding: unset;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30%;
+  margin-bottom: 1px;
 }
 .wrapper .weather-container .loading-container {
   display: flex;
@@ -96,6 +133,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  display: none;
 }
 .wrapper .weather-container .info-container .name {
   display: flex;
