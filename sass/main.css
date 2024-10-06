@@ -84,6 +84,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
 }
 .wrapper .weather-container .loading-container p {
   text-transform: uppercase;
@@ -91,5 +92,78 @@
   font-size: 1.5rem;
 }
 .wrapper .weather-container .info-container {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.wrapper .weather-container .info-container .name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+.wrapper .weather-container .info-container .name p {
+  font-size: 2rem;
+}
+.wrapper .weather-container .info-container .name img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.wrapper .weather-container .info-container p {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+.wrapper .weather-container .info-container p[data-temp] {
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+.wrapper .weather-container .info-container img {
+  width: 90px;
+  height: 90px;
+}
+.wrapper .weather-container .info-container .parameter-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 20px;
+  margin-top: 2rem;
+}
+.wrapper .weather-container .info-container .parameter-container .parameter {
+  width: 30%;
+  max-width: 200px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px 0;
+  position: relative;
+}
+.wrapper .weather-container .info-container .parameter-container .parameter img {
+  width: 120%;
+  height: 135px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+.wrapper .weather-container .info-container .parameter-container .parameter p {
+  position: absolute;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.wrapper .weather-container .info-container .parameter-container .parameter p:first-of-type {
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  top: 30%;
+}
+.wrapper .weather-container .info-container .parameter-container .parameter p:last-of-type {
+  font-size: 1rem;
+  font-weight: 400;
+  bottom: 30%;
 }/*# sourceMappingURL=main.css.map */
