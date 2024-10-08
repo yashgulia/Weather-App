@@ -88,12 +88,13 @@
     .form-container {
       @include flexalign(row);
       justify-content: center;
-      display: none;
       width: 90%;
       max-width: 550px;
       margin: 0 auto;
       gap: 0 10px;
       margin-bottom: 3rem;
+
+      display: none;
 
       input {
         all: unset;
@@ -139,7 +140,8 @@
     .info-container {
       @include flexalign(column);
       width: 100%;
-      // display: none;
+
+      display: none;
 
       .name {
         @include flexalign(row);
@@ -216,6 +218,10 @@
           }
         }
       }
+    }
+
+    .active {
+      display: flex;
     }
   }
 }
