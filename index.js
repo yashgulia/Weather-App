@@ -124,6 +124,9 @@ function showPosition(position) {
     lat: position.coords.latitude,
     lon: position.coords.longitude,
   };
+
+  sessionStorage.setItem("user-coordinates", JSON.stringify(userCoordinates)); // Store latitude & longitude in session storage
+  fetchWeatherInfo(userCoordinates); // Fetch Weather for these coordinates
 }
 
 grantAccessButton.addEventListener("click", getLocation);
