@@ -7,6 +7,7 @@ const loader = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".info-container");
 const errorContainer = document.querySelector(".error-container");
 const grantAccessButton = document.querySelector("[data-grantAccess]");
+const searchInput = document.querySelector("[data-searchInput]");
 
 let currentTab = userTab;
 currentTab.classList.add("current-tab");
@@ -130,3 +131,39 @@ function showPosition(position) {
 }
 
 grantAccessButton.addEventListener("click", getLocation);
+
+// Fetch Weather data from API using city name
+async function fetchSearchWeatherInfo(city) {
+  // Show Loader
+  loader.classList.add("active");
+  // Remove weather data
+  userInfoContainer.classList.remove("active");
+  // Remove Grant Location access container
+  grantAccessContainer.classList.remove("active");
+
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+    );
+    const data = await response.json();
+    // After fetching data remove loader
+    loader.classList.remove("active");
+    // Show Weather data container
+    userInfoContainer.classList.add("active");
+    // Update UI with fetched data
+    renderWeatherInfo(data);
+  } catch (err) {
+    // Remove Loader
+    loader.classList.remove("active");
+    // Show error UI
+    errorContainer.classList.add("active");
+  }
+}
+
+searchContainer.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let cityName = searchInput.value;
+
+  if (cityName === "") return;
+  else fetchSearchWeatherInfo(cityName);
+});
