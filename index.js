@@ -38,3 +38,18 @@ userTab.addEventListener("click", () => {
 searchTab.addEventListener("click", () => {
   switchTab(searchTab);
 });
+
+// Check if location coordinates are present in storage session or not
+function getfromSessionStorage() {
+  const localCoordinates = sessionStorage.getItem("user-coordinates");
+
+  // If Coordinates not found, show Grant Location Access UI
+  if (!localCoordinates) {
+    grantAccessContainer.classList.add("active");
+  }
+  // Coordinates Found, fetch Weather Data
+  else {
+    const coordinates = JSON.parse(localCoordinates); // Convert Json String to JSON Object
+    fetchWeatherInfo(coordinates);
+  }
+}
