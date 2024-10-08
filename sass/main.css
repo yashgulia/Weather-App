@@ -12,7 +12,7 @@
 .wrapper .bgImg {
   width: 100vw;
   height: 100vh;
-  filter: brightness(30%);
+  filter: brightness(80%);
   position: absolute;
   z-index: -1;
 }
@@ -30,7 +30,7 @@
   justify-content: space-between;
 }
 .wrapper .tab-container .current-tab {
-  background-color: rgba(219, 226, 239, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 4px;
 }
 .wrapper .tab-container .tab {
@@ -41,10 +41,6 @@
   font-weight: 600;
 }
 .wrapper .weather-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin-block: 4rem;
 }
 .wrapper .weather-container .grant-location {
@@ -82,6 +78,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  display: none;
   width: 90%;
   max-width: 550px;
   margin: 0 auto;
@@ -133,7 +130,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  display: none;
 }
 .wrapper .weather-container .info-container .name {
   display: flex;
@@ -188,11 +184,12 @@
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
+  filter: brightness(95%);
 }
 .wrapper .weather-container .info-container .parameter-container .parameter p {
   position: absolute;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 .wrapper .weather-container .info-container .parameter-container .parameter p:first-of-type {
   font-size: 1.15rem;

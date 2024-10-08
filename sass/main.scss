@@ -15,7 +15,7 @@
   .bgImg {
     width: 100vw;
     height: 100vh;
-    filter: brightness(30%);
+    filter: brightness(80%);
     position: absolute;
     z-index: -1;
   }
@@ -35,7 +35,7 @@
     justify-content: space-between;
 
     .current-tab {
-      background-color: rgba(219, 226, 239, 0.5);
+      background-color: rgba(0, 0, 0, 0.7);
       border-radius: 4px;
     }
 
@@ -49,8 +49,6 @@
   }
 
   .weather-container {
-    @include flexalign(column);
-    justify-content: center;
     margin-block: 4rem;
 
     .grant-location {
@@ -90,7 +88,7 @@
     .form-container {
       @include flexalign(row);
       justify-content: center;
-      // display: none;
+      display: none;
       width: 90%;
       max-width: 550px;
       margin: 0 auto;
@@ -141,7 +139,7 @@
     .info-container {
       @include flexalign(column);
       width: 100%;
-      display: none;
+      // display: none;
 
       .name {
         @include flexalign(row);
@@ -195,12 +193,13 @@
             height: 135px;
             object-fit: cover;
             border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+            filter: brightness(95%);
           }
 
           p {
             position: absolute;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0);
           }
 
           p:first-of-type {

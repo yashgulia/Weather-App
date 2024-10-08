@@ -8,12 +8,12 @@
   </head>
   <body>
     <div class="wrapper">
-      <img class="bgImg" src="/img/bgImg.jpg" />
+      <img class="bgImg" src="/img/bgImg1.jpg" />
 
       <h1>Weather App</h1>
 
       <div class="tab-container">
-        <p class="tab current-tab" data-userWeather>Your Weather</p>
+        <p class="tab" data-userWeather>Your Weather</p>
         <p class="tab" data-searchWeather>Search Weather</p>
       </div>
 
@@ -29,7 +29,7 @@
         <!-- Search Location UI -->
         <form class="form-container" data-searchForm>
           <input placeholder="Search for City..." data-searchInput />
-          <button class="btn">
+          <button class="btn" type="submit">
             <img src="./img/search.png" width="20" height="20" loading="lazy" />
           </button>
         </form>
@@ -51,7 +51,7 @@
 
           <img data-weatherIcon />
 
-          <p data-temp>28.1 C</p>
+          <p data-temp>28.1 °C</p>
 
           <div class="parameter-container">
             <!-- Card 1 -->
