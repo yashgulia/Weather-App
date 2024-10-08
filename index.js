@@ -1,6 +1,5 @@
 const userTab = document.querySelector("[data-userWeather]");
 const searchTab = document.querySelector("[data-searchWeather]");
-const userContainer = document.querySelector(".weather-container");
 const grantAccessContainer = document.querySelector(".grant-location");
 const searchContainer = document.querySelector(".form-container");
 const loader = document.querySelector(".loading-container");
@@ -8,12 +7,15 @@ const userInfoContainer = document.querySelector(".info-container");
 const errorContainer = document.querySelector(".error-container");
 const grantAccessButton = document.querySelector("[data-grantAccess]");
 const searchInput = document.querySelector("[data-searchInput]");
+require("dotenv").config();
 
 let currentTab = userTab;
 currentTab.classList.add("current-tab");
-const API_KEY = "";
+const API_KEY = process.env.API_KEY;
+getfromSessionStorage();
 
 function switchTab(switchedTab) {
+  errorContainer.classList.remove("active");
   // If we are not clicking on same(current) Tab
   if (switchedTab != currentTab) {
     currentTab.classList.remove("current-tab");
@@ -72,17 +74,23 @@ async function fetchWeatherInfo(coordinates) {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     );
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
+    }
+
     const data = await response.json();
 
     // Remove Loader after getting data
     loader.classList.remove("active");
-    console.log(data);
 
     // Show information conatiner
     userInfoContainer.classList.add("active");
     renderWeatherInfo(data);
   } catch (err) {
     loader.classList.remove("active");
+
+    userInfoContainer.classList.remove("active");
     // Show error UI
     errorContainer.classList.add("active");
   }
@@ -145,6 +153,11 @@ async function fetchSearchWeatherInfo(city) {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
     );
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
+    }
+
     const data = await response.json();
     // After fetching data remove loader
     loader.classList.remove("active");
@@ -155,6 +168,9 @@ async function fetchSearchWeatherInfo(city) {
   } catch (err) {
     // Remove Loader
     loader.classList.remove("active");
+    // Remove Weather data UI
+    userInfoContainer.classList.remove("active");
+
     // Show error UI
     errorContainer.classList.add("active");
   }
