@@ -6,6 +6,7 @@ const searchContainer = document.querySelector(".form-container");
 const loader = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".info-container");
 const errorContainer = document.querySelector(".error-container");
+const grantAccessButton = document.querySelector("[data-grantAccess]");
 
 let currentTab = userTab;
 currentTab.classList.add("current-tab");
@@ -108,3 +109,21 @@ function renderWeatherInfo(weatherInfo) {
   humidity.innerText = `${weatherInfo?.main?.humidity}%`;
   cloudiness.innerText = `${weatherInfo?.clouds?.all}%`;
 }
+
+function getLocation() {
+  // Check if browser supports Geolocation API or not
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert("Geolocation support is not available for your browser");
+  }
+}
+
+function showPosition(position) {
+  const userCoordinates = {
+    lat: position.coords.latitude,
+    lon: position.coords.longitude,
+  };
+}
+
+grantAccessButton.addEventListener("click", getLocation);
