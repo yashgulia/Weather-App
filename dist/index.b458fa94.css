@@ -4,32 +4,43 @@
   padding: 0;
 }
 
-.wrapper {
-  color: #f9f7f7;
-  width: 100vw;
-  height: 100vh;
+html, body {
+  height: 100%;
 }
 
-.wrapper .bgImg {
-  filter: brightness(80%);
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
+.wrapper {
+  color: #f9f7f7;
+  background-image: url("bgImg2.f036ea4e.jpg");
+  background-position: center;
+  background-size: cover;
+  max-width: 100vw;
+  min-height: 100vh;
 }
 
 .wrapper h1 {
   text-align: center;
   text-transform: uppercase;
-  padding-top: 1rem;
+  padding-top: 2rem;
+}
+
+@media screen and (width <= 768px) {
+  .wrapper h1 {
+    font-size: 1.75rem;
+  }
 }
 
 .wrapper .tab-container {
   justify-content: space-between;
-  width: 90%;
+  width: 80%;
   max-width: 550px;
-  margin: 4rem auto 0;
+  margin: 2rem auto 0;
   display: flex;
+}
+
+@media screen and (width <= 768px) {
+  .wrapper .tab-container {
+    font-size: 1.75rem;
+  }
 }
 
 .wrapper .tab-container .current-tab {
@@ -43,6 +54,12 @@
   padding: 5px 8px;
   font-size: 1rem;
   font-weight: 600;
+}
+
+@media screen and (width <= 768px) {
+  .wrapper .tab-container .tab {
+    font-size: .9rem;
+  }
 }
 
 .wrapper .weather-container {
@@ -152,6 +169,7 @@
 }
 
 .wrapper .weather-container .info-container .name p {
+  letter-spacing: .1rem;
   font-size: 2rem;
 }
 
@@ -163,6 +181,7 @@
 }
 
 .wrapper .weather-container .info-container p {
+  text-transform: capitalize;
   font-size: 1.5rem;
   font-weight: 200;
 }
@@ -187,6 +206,16 @@
   display: flex;
 }
 
+@media screen and (width <= 768px) {
+  .wrapper .weather-container .info-container .parameter-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 1rem;
+    display: flex;
+  }
+}
+
 .wrapper .weather-container .info-container .parameter-container .parameter {
   flex-direction: column;
   align-items: center;
@@ -198,13 +227,19 @@
   position: relative;
 }
 
+@media screen and (width <= 768px) {
+  .wrapper .weather-container .info-container .parameter-container .parameter {
+    width: 100%;
+  }
+}
+
 .wrapper .weather-container .info-container .parameter-container .parameter img {
   -o-object-fit: cover;
   object-fit: cover;
   filter: brightness(95%);
   border-radius: 5px;
   width: 120%;
-  height: 135px;
+  height: 152px;
   box-shadow: 0 4px 10px #000;
 }
 

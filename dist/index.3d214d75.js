@@ -722,7 +722,10 @@ searchContainer.addEventListener("submit", (e)=>{
     e.preventDefault();
     let cityName = searchInput.value;
     if (cityName === "") return;
-    else fetchSearchWeatherInfo(cityName);
+    else {
+        errorContainer.classList.remove("active");
+        fetchSearchWeatherInfo(cityName);
+    }
 });
 
 },{"506c8295080493b2":"lErsX"}],"lErsX":[function(require,module,exports) {

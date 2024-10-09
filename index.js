@@ -181,5 +181,8 @@ searchContainer.addEventListener("submit", (e) => {
   let cityName = searchInput.value;
 
   if (cityName === "") return;
-  else fetchSearchWeatherInfo(cityName);
+  else {
+    errorContainer.classList.remove("active");
+    fetchSearchWeatherInfo(cityName);
+  }
 });
