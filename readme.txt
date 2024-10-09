@@ -1,5 +1,7 @@
 Weather App
 
+Live Demo: https://weather-app-yg.netlify.app/
+
 Overview :
 
 The Weather App is a user-friendly web application that allows users to fetch and display weather data based on their current location or by searching for a specific city. Utilizing the OpenWeatherMap API, this app provides real-time weather information, including temperature, humidity, wind speed.
@@ -18,6 +20,7 @@ HTML
 SCSS (CSS Preprocessor)
 JavaScript
 OpenWeatherMap API
+Geolocation API
 dotenv (for environment variables)
 
 Usage :
